@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:movie_themoviedb/controller/movie_controler.dart';
+// import 'package:movie_themoviedb/models/movie_model.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Get.put(MovieController());
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Movie App',
       home: Scaffold(
         appBar: AppBar(
